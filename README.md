@@ -8,3 +8,36 @@
 ajaxQueue1文件夹
 ajaxQueue-requireJS //为符合AMD规范的文件，可以直接作为requireJS的模块导入
 ```
+## 使用示例
+```
+Data.get([{
+            url:"demo1.json",
+            type:"post",
+            dataType:"json",
+            done: function (data) {
+                console.log("我执行完毕了");
+            },
+            fail: function () {
+                console.log("我执行失败了");
+            },
+            always: function () {
+                console.log("只要发起ajax请求我就会被执行");
+            }
+        },{
+            url:"demo2.json",
+            type:"post",
+            dataType:"json",
+            done: function (data) {
+                console.log("我执行完毕了");
+            },
+            fail: function () {
+                console.log("我执行失败了");
+            },
+            always: function () {
+                console.log("只要发起ajax请求我就会被执行");
+            }
+        }],function(){
+			//全部执行完毕后回调我
+            alert("OK");
+        });
+```
